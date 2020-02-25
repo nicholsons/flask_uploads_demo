@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Test</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+</head>
+<body>
+<div class="container">
+    <div class="content">
+        <!-- flash messages -->
+        {% for error_message in get_flashed_messages(category_filter=["error"]) %}
+            <div class="alert alert-danger alert-dismissible">{{ error_message }}</div>
+        {% endfor %}
+        {% for success_message in get_flashed_messages(category_filter=["success"]) %}
+            <div class="alert alert-success alert-dismissible">{{ success_message }}</div>
+        {% endfor %}
+        {% for info_message in get_flashed_messages(category_filter=["info"]) %}
+            <div class="alert alert-info alert-dismissible">{{ info_message }}</div>
+        {% endfor %}
+
+        <!-- child template -->
+        {% block content %}
+        {% endblock %}
+    </div>
+</div>
+</body>
+</html>

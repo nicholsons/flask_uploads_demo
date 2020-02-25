@@ -1,0 +1,13 @@
+{% extends 'layout.html' %}
+{% from "_form_macros.html" import render_field %}
+{% block content %}
+    <p>Create profile</p>
+    <form method="post" enctype="multipart/form-data">
+        {{ form.csrf_token }}
+        <dl>
+            {{ render_field(form.name, placeholder="Enter name") }}
+            {{ render_field(form.img) }}
+        </dl>
+        <button class="btn btn-sm btn-success" type="submit">Create profile</button>
+    </form>
+{% endblock %}

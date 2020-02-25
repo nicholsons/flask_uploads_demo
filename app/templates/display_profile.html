@@ -1,0 +1,7 @@
+{% extends "layout.html" %}
+{% block content %}
+    <p>Name: {{ profile.name }}</p>
+  {% if profile.image_url %}
+      <img src="{{ profile.image_url }}" alt="{{ profile.image_filename }}" style="width:100px;height:100px;">
+    {% endif %}
+{% endblock %}
